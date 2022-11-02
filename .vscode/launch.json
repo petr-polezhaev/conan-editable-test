@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "conan source",
+            "type": "python",
+            "request": "launch",
+            "module": "conans.conan",
+            "args": ["source", "${fileDirname}"],
+            "env": {
+                "CONAN_HOME": "~/.local/conan-editable-test"
+            },
+            "justMyCode": false,
+        },
+        {
+            "name": "conan build",
+            "type": "python",
+            "request": "launch",
+            "module": "conans.conan",
+            "args": [
+                "build",
+                "--output-folder", "${workspaceFolder}/.temp/${relativeFileDirname}",
+                "${fileDirname}"
+            ],
+            "env": {
+                "CONAN_HOME": "~/.local/conan-editable-test"
+            },
+            "justMyCode": false
+        }
+    ]
+}

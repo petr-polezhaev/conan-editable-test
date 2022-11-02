@@ -1,0 +1,42 @@
+diff --git a/hello.cpp b/hello.cpp
+index c31fca0..3201958 100644
+--- a/hello.cpp
++++ b/hello.cpp
+@@ -3,10 +3,10 @@
+ #include "hello.h"
+ 
+ 
+-void hello() {
++void hello(const char* what) {
+     #ifdef NDEBUG
+-    std::cout << "Hello World Release!" <<std::endl;
++    std::cout << "Hello " << what << " Release!" <<std::endl;
+     #else
+-    std::cout << "Hello World Debug!" <<std::endl;
++    std::cout << "Hello " << what << " Debug!" <<std::endl;
+     #endif
+ }
+diff --git a/hello.h b/hello.h
+index 11c3c83..8e2d3f0 100644
+--- a/hello.h
++++ b/hello.h
+@@ -6,4 +6,4 @@
+   #define HELLO_EXPORT  
+ #endif
+ 
+-HELLO_EXPORT void hello();
+\ No newline at end of file
++HELLO_EXPORT void hello(const char* what);
+diff --git a/main.cpp b/main.cpp
+index cd0d2b2..182fd4d 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -1,5 +1,5 @@
+ #include "hello.h"
+ 
+ int main (void) {
+-    hello();
+-}
+\ No newline at end of file
++    hello("World");
++}

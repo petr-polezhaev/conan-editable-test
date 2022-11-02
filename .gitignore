@@ -1,0 +1,6 @@
+/.venv
+/.mypy_cache
+/.temp
+CMakeUserPresets.json
+/build
+/.cache

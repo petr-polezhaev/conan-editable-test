@@ -1,0 +1,6 @@
+[requires]
+foo/1.0@temp/test
+
+[generators]
+CMakeDeps
+CMakeToolchain
